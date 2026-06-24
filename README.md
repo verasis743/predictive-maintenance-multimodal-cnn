@@ -222,7 +222,7 @@ IoT-integrated predictive maintenance for electromechanical machines.
 
 ## License and Rights
 
-© [Author Name], [Year]. All rights reserved.
+© [Verasis Kour], [2025]. All rights reserved.
 
 This repository is shared for **portfolio and review purposes only**.
 No part of this code, methodology, or results may be reproduced,
