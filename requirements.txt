@@ -1,0 +1,41 @@
+# =============================================================================
+# Requirements for Experiment 4:
+# Early-Fusion Multimodal CNN for Electromechanical Fault Diagnosis
+#
+# Install with:
+#   pip install -r requirements.txt
+#
+# GPU training requires a CUDA-compatible environment.
+# The code falls back to CPU automatically if CUDA is unavailable.
+# =============================================================================
+
+# Deep learning
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# Audio processing
+librosa>=0.10.0
+
+# Computer vision
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# Data augmentation
+albumentations>=1.3.0
+
+# Machine learning utilities
+scikit-learn>=1.3.0
+
+# Numerical computing
+numpy>=1.24.0
+
+# Visualisation
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Dimensionality reduction (optional — required for UMAP plots)
+umap-learn>=0.5.3
+
+# ONNX export (optional — required for edge deployment)
+# onnx>=1.14.0
+# onnxruntime>=1.16.0
