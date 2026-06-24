@@ -32,7 +32,7 @@ data/
 | Thermal imaging | Fluke Ti400 PRO infrared camera | Healthy / Mild Fault / Heavy Fault |
 | Acoustic recording | INMP441 MEMS microphone | Healthy / Mild Fault / Heavy Fault |
 
-- Total machines evaluated across Experiments II, III, IV: **31**
+- Total machines evaluated across Experiments: **31**
 - Recording conditions: varying voltage, load, ambient noise, and machine age
 - Each `.wav` file is segmented into 5-second non-overlapping clips
   (first 10 seconds discarded to remove startup transients)
