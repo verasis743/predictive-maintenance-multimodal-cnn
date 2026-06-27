@@ -210,6 +210,17 @@ def main():
     )
     print(f"Training curves saved to {RESULTS_DIR}/")
 
+    # ── Return test split objects for evaluation ───────────────────────────────
+    # These in-memory objects are returned so main.py can pass them directly
+    # to evaluate.py without reloading data from disk.
+    return dict(
+        test_thermal=test_thermal,
+        test_acoustic=test_acoustic,
+        test_labels=test_labels,
+        test_loader=test_loader,
+        test_tf=test_tf,
+    )
+
 
 if __name__ == "__main__":
     main()
