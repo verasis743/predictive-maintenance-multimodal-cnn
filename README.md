@@ -127,15 +127,15 @@ See `src/model.py` for ONNX export instructions (commented block at end of file)
 │   ├── model.py        ← EarlyFusionNet + ONNX export (commented)
 │   ├── train.py        ← training loop entry point
 │   ├── evaluate.py     ← clean + noise robustness evaluation
-│   └── visualize.py    ← confusion matrix, training curves, UMAP plots
+│   ├── visualize.py    ← confusion matrix, training curves, UMAP plots
+│   └── main.py         ← full pipeline entry point (train → evaluate in one command)
 │
 ├── data/
 │   ├── thermal/        ← thermal images (not included — see data/README.md)
 │   ├── audio/          ← acoustic recordings (not included)
 │   └── noise_sources/  ← noise .mp3 files (not included — see noise_sources/README.md)
 │
-├── results/            ← confusion matrices, training curves, UMAP plots
-├── checkpoints/        ← saved model weights (best_fusion.pth)
+├── results/                  
 ├── requirements.txt
 └── README.md
 ```
@@ -146,7 +146,7 @@ See `src/model.py` for ONNX export instructions (commented block at end of file)
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YourUsername/predictive-maintenance-multimodal-cnn.git
+git clone https://github.com/verasis743/predictive-maintenance-multimodal-cnn.git
 cd predictive-maintenance-multimodal-cnn
 ```
 
@@ -162,19 +162,24 @@ For a public proxy dataset, see the CWRU Bearing Dataset instructions there.
 ### 4. Configure paths and hyperparameters
 Edit `src/config.py` — all settings are in one place.
 
-### 5. Train
+### 5. Run the full pipeline
 ```bash
 cd src
-python train.py
+python main.py
 ```
+This runs training and evaluation in sequence.
 Checkpoints saved to `checkpoints/best_fusion.pth`.
-Training curves saved to `results/`.
+All results saved to `results/`.
 
-### 6. Evaluate
-```python
-# In a notebook or script, after training:
-from evaluate import main as run_eval
-run_eval(test_thermal, test_acoustic, test_labels, test_loader, test_tf)
+### 6. Run training or evaluation individually
+```bash
+# Training only
+cd src
+python train.py
+
+# Evaluation only (after training has completed)
+cd src
+python evaluate.py
 ```
 
 ---
@@ -222,7 +227,7 @@ IoT-integrated predictive maintenance for electromechanical machines.
 
 ## License and Rights
 
-© [Author Name], [Year]. All rights reserved.
+© Verasis Kour, 2025. All rights reserved.
 
 This repository is shared for **portfolio and review purposes only**.
 No part of this code, methodology, or results may be reproduced,
@@ -236,9 +241,6 @@ under examination. Commercial use is strictly prohibited.
 
 ## Citation
 
-If you reference this work, please cite the associated paper:
-
-```
-[to be updated]
-```
+If you reference this work, please cite :
+[ to be updated ]```
  
